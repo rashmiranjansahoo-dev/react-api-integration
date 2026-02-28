@@ -14,6 +14,6 @@ export async function fetchUsers() {
     name: user.name,
     email: user.email,
     company: user.company.name,
-    city: user.address.city,
+    city: user.address.city
   }));
 }
