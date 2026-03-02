@@ -1,12 +1,13 @@
-function UsersTable({ users }) {
+function UsersTable({ users, onSelectUser }) {
   return (
-    <table border="1" cellPadding="8">
+    <table border="1" cellPadding="8" >
       <thead>
         <tr>
           <th>Name</th>
           <th>Email</th>
           <th>Company</th>
           <th>City</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,11 @@ function UsersTable({ users }) {
             <td>{user.email}</td>
             <td>{user.company}</td>
             <td>{user.city}</td>
+            <td>
+               <button onClick={() => onSelectUser(user)}>
+                Click
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>

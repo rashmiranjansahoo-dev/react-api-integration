@@ -1,10 +1,10 @@
-const API_URL = "https://jsonplaceholder.typicode.com/users";
+const API_URL = "https://jsonplaceholder.typicode.com/users/";
 
 export async function fetchUsers() {
   const response = await fetch(API_URL);
 
   if (!response.ok) {
-    throw new Error("Failed to fetch users");
+    throw new Error("Failed to fetch users from the source..."); 
   }
 
   const data = await response.json();
@@ -14,6 +14,7 @@ export async function fetchUsers() {
     name: user.name,
     email: user.email,
     company: user.company.name,
-    city: user.address.city
+    city: user.address.city,
+    website:user.website
   }));
 }
